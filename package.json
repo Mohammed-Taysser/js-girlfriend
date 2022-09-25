@@ -1,6 +1,6 @@
 {
 	"name": "js-girlfriend",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "In-memory javascript cache. It's called your girlfriend because it will remember everything.",
 	"main": "app.js",
 	"scripts": {
