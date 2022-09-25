@@ -1,6 +1,14 @@
 
 # How To Make Your Own NPM Package
 
+## Usage
+
+```js
+const helloWorld = require('js-girlfriend');
+
+console.log(helloWorld)
+```
+
 ## Accounts and Installations You Should Have Before Getting Started
 
 Before getting started, make sure have the following set up:
@@ -121,3 +129,12 @@ Conclusion
 I used a simple example, but as you get more comfortable with creating npm packages you can make them as complex as you see fit. In the end, once you understand the process and have tested it out, publishing an npm package is actually quite simple.
 
 You now know what it takes to create your own npm package and publish it! Good luck, have fun and please feel free to share the npm packages you create with me.
+
+## Updating an existing package
+
+On the command line, in the package root directory, run the following commands:
+
+```shell
+npm version patch
+npm publish
+```
