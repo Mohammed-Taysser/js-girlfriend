@@ -134,6 +134,8 @@ You now know what it takes to create your own npm package and publish it! Good l
 
 On the command line, in the package root directory, run the following commands:
 
+> **note**: The README file will only be updated on the package page when you publish a new version of your package. To update your README file:
+
 ```shell
 npm version patch
 npm publish
