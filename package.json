@@ -1,5 +1,5 @@
 {
-	"name": "npm-girlfriend",
+	"name": "js-girlfriend",
 	"version": "1.0.0",
 	"description": "In-memory javascript cache. It's called your girlfriend because it will remember everything.",
 	"main": "app.js",
@@ -12,11 +12,11 @@
 	],
 	"author": "Mohammed Taysser <mohamedtayser@gmail.com>",
 	"bugs": {
-		"url": "https://github.com/Mohammed-Taysser/npm-girlfriend/issues"
+		"url": "https://github.com/Mohammed-Taysser/js-girlfriend/issues"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/Mohammed-Taysser/npm-girlfriend.git"
+		"url": "git+https://github.com/Mohammed-Taysser/js-girlfriend.git"
 	},
 	"license": "MIT",
 	"engines": {
