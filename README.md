@@ -23,7 +23,7 @@ Once you have your accounts set up and and everything installed we can get start
 
 If you are as picky as I am, this could be on of the hardest steps for you. Also, just when you think you have the best name possible, it could already be taken.
 
-Before getting too attached to a name you can check wether the name you pick is available on the npm website or you can visit this website, input the name you like and it will tell you if it’s available: <https://remarkablemark.org/npm-package-name-checker/>
+Before getting too attached to a name you can check wether the name you pick is available on the npm website or you can visit this website, input the name you like and it will tell you if it's available: <https://remarkablemark.org/npm-package-name-checker/>
 
 It is important that your package name is unique, especially if you plan on publishing it as a public package.
 
@@ -139,4 +139,88 @@ On the command line, in the package root directory, run the following commands:
 ```shell
 npm version patch
 npm publish
+```
+
+## [`Make an CLI package`](https://www.npmjs.com/package/global-npm-seed)
+
+This is a tutorial and a template for creating your own CLI with node! You can also checkout the [`final npm module`](https://npmjs.org/package/global-npm-seed)
+
+### Getting Setup
+
+Make sure that you have `node` and `npm` installed.
+
+Start by creating an empty directory and navigate to it in your terminal. Run `npm init` which will ask you a couple of questions about the module that you are building such as name, versions, repository and author. You can use the default values for all of these, or enter some real data if you want.
+
+Once it has all the information, it will compile it into `package.json`. `package.json` holds other data and metadata to identify and install your module.
+
+### Modifying `package.json`
+
+We need to make a couple of changes to `package.json` to get started.
+
+#### Prefer Global
+
+The first property to add is `preferGlobal`. `preferGloabl` is a handy little property that tell npm this module is intended to be used from the terminal. If a user tries to install the module locally, npm will warn them that the package is intended for global installation.
+
+```json
+{
+  ...
+  "preferGlobal": "true",
+  ...
+}
+```
+
+#### Directories Property
+
+The directories property is the one that makes this all work. By setting directories.bin, we are telling npm which file or directory contains the files to be added to the system PATH.
+
+For this demo, we want users to be able to run hello from the terminal, so I need to create a new directory bin and create a file called hello in it. Then add the directories property to package.json. Now when our module is installed the user will be able to access `./utils/hello` from the terminal.
+
+```json
+{
+  ...
+  "preferGlobal": "true",
+  "bin": {
+    "hello": "./utils/hello.js"
+  },
+  ...
+}
+```
+
+### Our "Main" File
+
+Create a directory called `utils` in your modules folder, and create `hello.js` inside of it. This file is going to contain all of our functionality. For now, it will display "Hello World!".
+
+#### `./utils/hello.js`
+
+```js
+#!/usr/bin/env node
+
+console.log('Hello World!');
+```
+
+Line one is a [`shebang`](http://en.wikipedia.org/wiki/Shebang_(Unix)). Line two is a require statement that requires our main file which will be executed. We now have all the pieces in place to test our CLI.
+
+### Installing Your Module
+
+Navigate to your projects root directory, and execute:
+
+```shell
+npm install -g ./
+```
+
+you will find a file with the name of command create at `/usr/local/bin` director in linux
+
+This is telling npm to install the module location in the current directory as a global module, which is exactly what we want. `-g` is a flag that specifies that the module should be installed globally.
+
+Now you can test the module by running
+
+```shell
+> hello
+Hello World!
+```
+
+If you need to uninstall it just write the following command at terminal:
+
+```shell
+sudo npm uninstall -g js-girlfriend
 ```

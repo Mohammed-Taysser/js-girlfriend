@@ -3,6 +3,9 @@
 	"version": "1.0.2",
 	"description": "In-memory javascript cache. It's called your girlfriend because it will remember everything.",
 	"main": "app.js",
+	"bin": {
+		"hello": "./utils/hello.js"
+	},
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
@@ -22,5 +25,19 @@
 	"engines": {
 		"npm": ">=8.13.2",
 		"node": ">=16.15.0"
+	},
+	"prettier": {
+		"singleQuote": true
+	},
+	"eslintConfig": {
+		"env": {
+			"browser": true,
+			"commonjs": true,
+			"es2021": true
+		},
+		"extends": "eslint:recommended",
+		"parserOptions": {
+			"ecmaVersion": "latest"
+		}
 	}
 }
